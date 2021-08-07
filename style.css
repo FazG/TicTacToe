@@ -44,7 +44,7 @@ h1 {
     position: absolute;
     content: "";
     background-color: rgb(50, 77, 197);
-    width: 2px;
+    width: 6px;
     height: 100%;
     left: 50%;
 }
@@ -63,10 +63,39 @@ h1 {
     border-color: rgb(192, 76, 47);
     border-style: solid;
     border-radius: 50%;
-    border-width: 2px;
-    height: 80%;
-    width: 80%;
-    top: 10%;
-    left: 10%;
+    border-width: 6px;
+    height: 70%;
+    width: 70%;
+    transform: translate(15%, 15%);
+}
+
+
+.square.turn-x:hover::before, .square.turn-x:hover::after {
+    position: absolute;
+    content: "";
+    background-color: rgba(50, 77, 197, 0.301);
+    width: 6px;
+    height: 100%;
+    left: 50%;
+}
+
+.square.turn-x:hover::before {
+    transform: rotate(45deg);
+}
+
+.square.turn-x:hover::after {
+    transform: rotate(-45deg);
+}
+
+.square.turn-o:hover::before, .square.turn-o:hover::after {
+    position: absolute;
+    content: "";
+    border-color: rgba(192, 76, 47, 0.103);
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 6px;
+    height: 70%;
+    width: 70%;
+    transform: translate(15%, 15%);
 }
 
