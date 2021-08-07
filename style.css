@@ -21,6 +21,7 @@ h1 {
 .square {
     border-style : solid;
     border-width: 1px;
+    position: relative;
 }
 
 .square:nth-child(1), .square:nth-child(2), .square:nth-child(3){
@@ -38,3 +39,34 @@ h1 {
 .square:nth-child(1), .square:nth-child(4), .square:nth-child(7){
     border-left: none;
 }
+
+.square.x::before, .square.x::after {
+    position: absolute;
+    content: "";
+    background-color: rgb(50, 77, 197);
+    width: 2px;
+    height: 100%;
+    left: 50%;
+}
+
+.square.x::before {
+    transform: rotate(45deg);
+}
+
+.square.x::after {
+    transform: rotate(-45deg);
+}
+
+.square.o::before, .square.o::after {
+    position: absolute;
+    content: "";
+    border-color: rgb(192, 76, 47);
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 2px;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+}
+
