@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
   }
 
 h1 {
@@ -19,6 +20,7 @@ h1 {
 
 .square {
     border-style : solid;
+    border-width: 1px;
 }
 
 .square:nth-child(1), .square:nth-child(2), .square:nth-child(3){
