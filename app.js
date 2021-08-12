@@ -16,13 +16,6 @@ const gameBoard = (() => {
 
   var oSquares = [];
 
-  const consoleLogSquares = () => {
-    console.log("X");
-    console.log(xSquares);
-    console.log("O");
-    console.log(oSquares);
-  }
-
   const winningCombinations = [
     [1, 2, 3],
     [4, 5, 6],
@@ -61,6 +54,14 @@ const gameBoard = (() => {
         gameBoard.toggleGameIsFinished();
         return;
       }
+      else if (xSquares.length + oSquares.length >= 9) {
+        document.querySelector("h2").textContent = "Nobody wins..."
+        document.querySelector("#winDiv").style.backgroundColor = 'rgba(198, 198, 202, 0.76)';
+        document.querySelector("button").style.backgroundColor = 'rgb(119, 119, 119)';
+        document.querySelector("#winDiv").style.display = 'flex';
+        gameBoard.toggleGameIsFinished();
+        return;
+      }
     }
   }
 
@@ -90,7 +91,7 @@ const gameBoard = (() => {
     nextTurn = turn == "x" ? "o" : "x";
   };
 
-  return { xSquares, oSquares, squaresDOM, getTurn, getNextTurn, changeTurn, winningCombinations, checkWin, getGameIsFinished, toggleGameIsFinished, resetGameBoard, consoleLogSquares };
+  return { xSquares, oSquares, squaresDOM, getTurn, getNextTurn, changeTurn, winningCombinations, checkWin, getGameIsFinished, toggleGameIsFinished, resetGameBoard };
 
 })()
 
@@ -123,7 +124,6 @@ const displayController = (() => {
             currentElement.classList.remove(`turn-${turn}`);
             gameBoard.changeTurn();
             updateTurn();
-            gameBoard.consoleLogSquares();
             gameBoard.checkWin();
           }
         }, { once: true }

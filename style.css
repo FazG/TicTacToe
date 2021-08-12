@@ -22,7 +22,7 @@ h2 {
     position: absolute;
     top: 300px;
     z-index: 1;
-    background-color: rgba(50, 77, 197, 0.76);
+    background-color: rgba(198, 198, 202, 0.76);
     width: 400px;
     flex-direction: column;
     align-items: center;
@@ -36,7 +36,7 @@ button {
     margin-bottom: 20px;
     width: 120px;
     height: 30px;
-    background-color: rgb(40, 67, 190);
+    background-color: rgb(119, 119, 119);
     color: white;
     border: none;
     padding: 5px;
