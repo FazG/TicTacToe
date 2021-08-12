@@ -9,6 +9,43 @@ h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 100px;
+    color:rgba(184, 184, 184, 0.747);
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+#winDiv {
+    display: none;
+    position: absolute;
+    top: 300px;
+    z-index: 1;
+    background-color: rgba(50, 77, 197, 0.76);
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1%;
+    color: white;
+}
+
+
+
+button {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 30px;
+    background-color: rgb(40, 67, 190);
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: transform 330ms ease-in-out;
+    transform: scale(1.1);
 }
 
 .grid {
@@ -21,7 +58,9 @@ h1 {
 .square {
     border-style : solid;
     border-width: 1px;
+    border-color:rgba(184, 194, 201, 0.747);
     position: relative;
+    cursor: pointer;
 }
 
 .square:nth-child(1), .square:nth-child(2), .square:nth-child(3){
@@ -38,6 +77,10 @@ h1 {
 
 .square:nth-child(1), .square:nth-child(4), .square:nth-child(7){
     border-left: none;
+}
+
+.square.x, .square.o {
+    cursor: not-allowed;
 }
 
 .square.x::before, .square.x::after {
@@ -99,3 +142,29 @@ h1 {
     transform: translate(15%, 15%);
 }
 
+.xWinLight {
+    background-color: rgba(119, 176, 214, 0.397);
+}
+
+.xWinDark {
+    color: rgb(50, 77, 197);
+}
+
+.xWinBorderDark {
+    border-color: rgb(50, 77, 197);
+}
+.oWinBorderDark {
+    border-color: rgb(192, 76, 47);
+}
+
+.oWinLight {
+    background-color: rgba(211, 163, 100, 0.397);
+}
+
+.oWinDark {
+    color: rgb(192, 76, 47);
+}
+
+.winSquare {
+    cursor: not-allowed;
+}
